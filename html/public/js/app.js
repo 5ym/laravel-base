@@ -1601,7 +1601,7 @@ module.exports = function spread(callback) {
 
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
 
 /*global toString:true*/
 
@@ -1936,6 +1936,28 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+module.exports = function isBuffer (obj) {
+  return obj != null && obj.constructor != null &&
+    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
+}
+
+
+/***/ }),
+
 /***/ "./node_modules/classnames/index.js":
 /*!******************************************!*\
   !*** ./node_modules/classnames/index.js ***!
@@ -1994,28 +2016,6 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	} else {}
 }());
-
-
-/***/ }),
-
-/***/ "./node_modules/is-buffer/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/is-buffer/index.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-module.exports = function isBuffer (obj) {
-  return obj != null && obj.constructor != null &&
-    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
-}
 
 
 /***/ }),
@@ -48722,26 +48722,14 @@ if (document.getElementById('example')) {
 
 /***/ }),
 
-/***/ "./resources/sass/app.scss":
-/*!*********************************!*\
-  !*** ./resources/sass/app.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n@import \"@material/elevation/mixins\";\n       ^\n      Can't find stylesheet to import.\n   ╷\n23 │ @import \"@material/elevation/mixins\";\n   │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   ╵\n  node_modules/@material/button/_mixins.scss 23:9      @import\n  node_modules/@material/button/mdc-button.scss 23:9   @import\n  node_modules/@material/react-button/index.scss 23:9  @import\n  stdin 1:9                                            root stylesheet\n      in /var/www/html/node_modules/@material/button/_mixins.scss (line 23, column 9)\n    at runLoaders (/var/www/html/node_modules/webpack/lib/NormalModule.js:313:20)\n    at /var/www/html/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /var/www/html/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/var/www/html/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at render (/var/www/html/node_modules/sass-loader/dist/index.js:89:7)\n    at Function.call$2 (/var/www/html/node_modules/sass/sass.dart.js:53451:16)\n    at _render_closure1.call$2 (/var/www/html/node_modules/sass/sass.dart.js:33267:12)\n    at _RootZone.runBinary$3$3 (/var/www/html/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/var/www/html/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/var/www/html/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/var/www/html/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/var/www/html/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/var/www/html/node_modules/sass/sass.dart.js:18257:9)\n    at _SyncCompleter._completeError$2 (/var/www/html/node_modules/sass/sass.dart.js:18123:19)\n    at _SyncCompleter.completeError$2 (/var/www/html/node_modules/sass/sass.dart.js:18092:12)\n    at _AsyncAwaitCompleter.completeError$2 (/var/www/html/node_modules/sass/sass.dart.js:17629:25)\n    at Object._asyncRethrow (/var/www/html/node_modules/sass/sass.dart.js:3226:17)\n    at /var/www/html/node_modules/sass/sass.dart.js:10407:20\n    at _wrapJsFunctionForAsync_closure.$protected (/var/www/html/node_modules/sass/sass.dart.js:3249:15)\n    at _wrapJsFunctionForAsync_closure.call$2 (/var/www/html/node_modules/sass/sass.dart.js:17664:12)\n    at _awaitOnObject_closure0.call$2 (/var/www/html/node_modules/sass/sass.dart.js:17656:25)\n    at _RootZone.runBinary$3$3 (/var/www/html/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/var/www/html/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/var/www/html/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/var/www/html/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/var/www/html/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/var/www/html/node_modules/sass/sass.dart.js:18257:9)\n    at _SyncCompleter._completeError$2 (/var/www/html/node_modules/sass/sass.dart.js:18123:19)\n    at _SyncCompleter.completeError$2 (/var/www/html/node_modules/sass/sass.dart.js:18092:12)\n    at Object.eval (eval at Closure_forwardCallTo (/var/www/html/node_modules/sass/sass.dart.js:1515:14), <anonymous>:3:41)\n    at _RootZone.runBinary$3$3 (/var/www/html/node_modules/sass/sass.dart.js:19664:18)\n    at _RootZone.runBinary$3 (/var/www/html/node_modules/sass/sass.dart.js:19668:19)\n    at _FutureListener.handleError$1 (/var/www/html/node_modules/sass/sass.dart.js:18136:19)\n    at _Future__propagateToListeners_handleError.call$0 (/var/www/html/node_modules/sass/sass.dart.js:18421:40)\n    at Object._Future__propagateToListeners (/var/www/html/node_modules/sass/sass.dart.js:3470:88)\n    at _Future._completeError$2 (/var/www/html/node_modules/sass/sass.dart.js:18257:9)");
-
-/***/ }),
-
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!***********************************!*\
+  !*** multi ./resources/js/app.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/html/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/html/resources/sass/app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! /Users/tmt-6web-16/Desktop/laravel-base/html/resources/js/app.js */"./resources/js/app.js");
 
 
 /***/ })
