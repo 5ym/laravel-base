@@ -2,11 +2,15 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>React Sample</title>
-    <link rel="stylesheet" href="{{asset('/css/app.css')}}">
+    <title>Easy order</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{mix('/css/app.css')}}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
+    <script>if ('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/service-worker.js')})}</script>
 </head>
-<body>
-<div id="example"></div>
-<script src="{{asset('/js/app.js')}}"></script>
-</body>
+    <body>
+        <div id="root"></div>
+        <script src="{{mix('/js/app.js')}}"></script>
+    </body>
 </html>

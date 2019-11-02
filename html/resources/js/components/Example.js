@@ -1,22 +1,9 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import Button from '@material/react-button';
+import React, {useEffect} from 'react';
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <Button
-                    raised
-                    className='button-alternate'
-                    onClick={() => console.log('clicked!')}
-                >
-                    Click Me!
-                </Button>
-            </div>
-        );
-    }
-}
-if (document.getElementById('example')) {
-    ReactDOM.render(<App />, document.getElementById('example'));
+export default function Example() {
+    return (
+        <div>
+            Hello World
+        </div>
+    );
 }
