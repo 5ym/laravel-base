@@ -1,12 +1,46 @@
 FROM alpine
 
-RUN apk --no-cache add nginx php-fpm composer php-zip php-tokenizer php-fileinfo php-dom php-xmlwriter php-xml php-session php-pdo_mysql php-zlib php-curl npm
-RUN mkdir /run/nginx
+RUN apk --no-cache add nginx php-fpm composer php-zip php-tokenizer php-fileinfo php-dom php-xmlwriter php-xml php-session php-pdo_mysql php-zlib php-curl npm && \
+mkdir /run/nginx
 ADD default.conf /etc/nginx/conf.d/default.conf
-ADD html /var/www/html
 WORKDIR /var/www/html
+ADD html .
+
+ENV APP_NAME=Laravel
+ENV APP_ENV=local
+ENV APP_KEY=base64:XMJSvtDxgbFgEESvwD4Y/TWCp29GHiGBgcFpSVTl5u0=
+ENV APP_DEBUG=true
+ENV APP_URL=http://localhost
+ENV LOG_CHANNEL=stack
+ENV DB_CONNECTION=mysql
+ENV DB_HOST=appdb
+ENV DB_PORT=3306
+ENV DB_USERNAME=root
+ENV BROADCAST_DRIVER=log
+ENV CACHE_DRIVER=file
+ENV QUEUE_CONNECTION=sync
+ENV SESSION_DRIVER=file
+ENV SESSION_LIFETIME=120
+ENV REDIS_HOST=127.0.0.1
+ENV REDIS_PASSWORD=null
+ENV REDIS_PORT=6379
+ENV MAIL_DRIVER=smtp
+ENV MAIL_HOST=smtp.mailtrap.io
+ENV MAIL_PORT=2525
+ENV MAIL_USERNAME=null
+ENV MAIL_PASSWORD=null
+ENV MAIL_ENCRYPTION=null
+ENV AWS_ACCESS_KEY_ID=
+ENV AWS_SECRET_ACCESS_KEY=
+ENV AWS_DEFAULT_REGION=us-east-1
+ENV AWS_BUCKET=
+ENV PUSHER_APP_ID=
+ENV PUSHER_APP_KEY=
+ENV PUSHER_APP_SECRET=
+ENV PUSHER_APP_CLUSTER=mt1
+ENV MIX_PUSHER_APP_KEY="${PUSHER_APP_KEY}"
+ENV MIX_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 
 EXPOSE 80
-EXPOSE 443
 
 CMD php-fpm7 && nginx -g "daemon off;"
