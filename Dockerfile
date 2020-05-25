@@ -4,7 +4,7 @@ RUN apk --no-cache add nginx php-fpm composer php-zip php-tokenizer php-fileinfo
 mkdir /run/nginx
 ADD default.conf /etc/nginx/conf.d/default.conf
 WORKDIR /var/www/html
-ADD html .
+ADD . .
 
 EXPOSE 80
 

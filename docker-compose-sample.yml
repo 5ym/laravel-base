@@ -5,9 +5,7 @@ services:
     ports:
       - '8080:80'
     volumes:
-      - ./html:/var/www/html
-    env_file:
-      - .env
+      - .:/var/www/html
   appdb:
     image: mariadb
     environment:
