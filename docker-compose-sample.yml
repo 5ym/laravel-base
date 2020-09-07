@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  ${DB_DATABASE}:
+    build: .
+    volumes:
+      - .:/var/www/html
+    networks:
+      - docker_default
+      - default
+  ${DB_HOST}:
+    image: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_DATABASE}
+    labels:
+      - "traefik.enable=false"
+
+networks:
+  docker_default:
+    external: true
+    name: docker_default
+      
